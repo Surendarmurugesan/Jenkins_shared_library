@@ -1,5 +1,5 @@
 def call(credentialsId) {
-    def rtCliHome = tool 'jfrog-cli' // Specify the tool name defined in Jenkins
+    def rtCliHome = tool 'jf' // Specify the tool name defined in Jenkins
 
     // Make sure the JFrog CLI is in the PATH
     env.PATH = "${rtCliHome}/bin:${env.PATH}"
@@ -12,6 +12,6 @@ def call(credentialsId) {
     // Retrieve Artifactory username and password from Jenkins credentials
     withCredentials([usernamePassword(credentialsId: credentialsId, passwordVariable: 'ARTIFACTORY_PASSWORD', usernameVariable: 'ARTIFACTORY_USERNAME')]) {
         // Publish to Artifactory
-        sh "jfrog rt u --url=${artifactory_URL} --user=${ARTIFACTORY_USERNAME} --password=${ARTIFACTORY_PASSWORD} target/kubernetes-*.jar ${artifactoryRepo}/${artifactoryPath}"
+        sh "jf rt u --url=${artifactory_URL} --user=${ARTIFACTORY_USERNAME} --password=${ARTIFACTORY_PASSWORD} target/kubernetes-*.jar ${artifactoryRepo}/${artifactoryPath}"
     }
 }
