@@ -7,7 +7,7 @@ def call(credentialsId) {
     // Artifactory details
     def artifactory_URL = 'http://localhost:8082/artifactory/'
     def artifactoryRepo = 'example-repo-local'
-    def artifactoryPath = 'kubernetes/' // The path in Artifactory where you want to store the JAR
+    def artifactoryPath = 'target/' // The path in Artifactory where you want to store the JAR
 
     // Retrieve Artifactory username and password from Jenkins credentials
     withCredentials([usernamePassword(credentialsId: credentialsId, passwordVariable: 'ARTIFACTORY_PASSWORD', usernameVariable: 'ARTIFACTORY_USERNAME')]) {
