@@ -5,7 +5,7 @@ def call(credentialsId) {
     // env.PATH = "${rtCliHome}/bin:${env.PATH}"
 
     // Artifactory details
-    def artifactory_URL = 'http://localhost:8082/artifactory/'
+    def artifactory_URL = 'http://localhost:8082'
     def artifactoryRepo = 'example-repo-local'
     def artifactoryPath = 'target/' // The path in Artifactory where you want to store the JAR
 
