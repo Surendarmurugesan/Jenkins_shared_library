@@ -12,6 +12,6 @@ def call(credentialsId) {
     // Retrieve Artifactory username and password from Jenkins credentials
     withCredentials([usernamePassword(credentialsId: credentialsId, passwordVariable: 'ARTIFACTORY_PASSWORD', usernameVariable: 'ARTIFACTORY_USERNAME')]) {
         // Publish to Artifactory
-        sh '''jf rt u --url=${artifactory_URL} --user=${ARTIFACTORY_USERNAME} --password=${ARTIFACTORY_PASSWORD} target/kubernetes-*.jar ${artifactoryRepo}/'''
+        sh "jf rt u --url=${artifactory_URL} --user=${ARTIFACTORY_USERNAME} --password=${ARTIFACTORY_PASSWORD} target/kubernetes-*.jar ${artifactoryRepo}/"
     }
 }
