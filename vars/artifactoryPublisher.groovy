@@ -1,8 +1,8 @@
 def call(credentialsId) {
-    def rtCliHome = tool 'jf' // Specify the tool name defined in Jenkins
+    // def rtCliHome = tool 'jf' // Specify the tool name defined in Jenkins
 
-    // Make sure the JFrog CLI is in the PATH
-    env.PATH = "${rtCliHome}/bin:${env.PATH}"
+    // // Make sure the JFrog CLI is in the PATH
+    // env.PATH = "${rtCliHome}/bin:${env.PATH}"
 
     // Artifactory details
     def artifactory_URL = 'http://localhost:8082/artifactory/'
